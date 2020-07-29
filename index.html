@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    
+    <div class="nav-container">
+      <nav>
+      
+        <div class="logo">
+          <img src="./img/logo.png" alt="logo" />
+        </div>
+  
+        <ul class="ul-nav">
+          <li class="nav-ativo"><a href="home">Home</a></li>
+          <li><a href="#">Bebidas</a></li>
+          <li><a href="#">Pizzas</a></li>
+          <li><a href="#">Hamburgers</a></li>
+          <li><a href="#">Comidas Japonesas</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <main>
+      
+      <div class="cabecalho">
+        <h1>Dashboard</h1>
+
+        <div class="toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="container intro-inputs-botoes">
+
+        <form>
+          <input type="text" placeholder="Pizzas,Hambugers" />
+          <button class="lupa"></button>
+        </form>
+
+        <div class="botoes">
+          <button class="btn-criar">Criar</button>
+          <button class="btn-importar">Importar</button>
+        </div>
+
+      </div>
+
+      <section class="conteudo">
+        <div class="conteudo-itens">
+
+          <div class="container conteudo-flex">
+            <div class="conteudo-itens-img">
+              <img src="./img/img-1.png" />
+            </div>
+
+            <div class="conteudo-info">
+              <div class="conteudo-titulos">
+                <h2>Pizza Grande</h2>
+                <span>15,99</span>
+              </div>
+  
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                laborum nihil impedit recusandae hic expedita laudantium
+                doloribus. At repudiandae omnis fuga quibusdam odit dolorem
+                corrupti aliquam magnam totam, nemo necessitatibus.
+              </p>
+            </div>
+            
+
+            <div class="conteudo-btns">
+              <button class="btn-editar">Editar</button>
+              <button class="btn-deletar">Deletar</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="conteudo-itens">
+          <div class="container conteudo-flex">
+            <div class="conteudo-itens-img">
+              <img src="./img/img-2.png" />
+            </div>
+
+            <div class="conteudo-info">
+              <div class="conteudo-titulos">
+                <h2>Bebidas Geladas</h2>
+                <span>35,99</span>
+              </div>
+  
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                laborum nihil impedit recusandae hic expedita laudantium
+                doloribus. At repudiandae omnis fuga quibusdam odit dolorem
+                corrupti aliquam magnam totam, nemo necessitatibus.
+              </p>
+            </div>
+
+            <div class="conteudo-btns">
+              <button class="btn-editar">Editar</button>
+              <button class="btn-deletar">Deletar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="conteudo-itens">
+          <div class="container conteudo-flex">
+            <div class="conteudo-itens-img">
+              <img src="./img/img-3.png" />
+            </div>
+
+            <div class="conteudo-info">
+              <div class="conteudo-titulos">
+                <h2>Mel Doce</h2>
+                <span>95,99</span>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                laborum nihil impedit recusandae hic expedita laudantium
+                doloribus. At repudiandae omnis fuga quibusdam odit dolorem
+                corrupti aliquam magnam totam, nemo necessitatibus.
+              </p>
+            </div>
+
+            <div class="conteudo-btns">
+              <button class="btn-editar">Editar</button>
+              <button class="btn-deletar">Deletar</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+    
+    <section class="modal-container">
+      <div class="modal">
+        <button data-modal="fechar" class="fechar">X</button>
+
+        <form>
+          <input type="file" name="imagen" id="imagen" placeholder="imagen do produto">
+
+          <label for="email">Nome Do Produto</label>
+          <input type="text" for='email' id="email">
+
+          <label for="preco">Preço Do Produto</label>
+          <input type="text" for='preco' id="preco">
+
+          <label for="descricao">Descrição</label>
+          <textarea name="descricao" id="descricao" ></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      
+      function botãoMobile(){
+        const nav = document.querySelector('.nav-container');
+        const toggle = document.querySelector('.toggle');
+
+        toggle.addEventListener('click',() =>{
+          nav.classList.toggle('ativo');
+          toggle.classList.toggle('active');
+        })
+
+        nav.addEventListener('click',(event) =>{
+          
+          if(event.target === event.currentTarget){
+            nav.classList.toggle('ativo');
+            toggle.classList.toggle('active');
+          }
+          
+        })
+      }
+  
+      botãoMobile();
+
+      function modalFunction(){
+        const botaAbrir = document.querySelector('.btn-criar');
+        const botaFechar = document.querySelector('.fechar');
+        const modalContainer = document.querySelector('.modal-container')
+
+        botaAbrir.addEventListener('click',() =>{
+          modalContainer.classList.toggle('ativo');
+        })
+
+        botaFechar.addEventListener('click',() =>{
+          modalContainer.classList.toggle('ativo');
+        })
+
+        modalContainer.addEventListener('click',(event) =>{
+          
+          if(event.target === event.currentTarget){
+            modalContainer.classList.toggle('ativo');
+          }
+          
+        })
+      }
+
+      modalFunction();
+    </script>
+    
+  </body>
+</html>
