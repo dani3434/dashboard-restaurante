@@ -709,6 +709,7 @@ button:focus,button:active{
   height: 150px;
   border-radius: 10px;
   border: none;
+  resize: none;
 }
 .modal button[type='submit']{
   background: #E6E6E6;
@@ -756,5 +757,91 @@ button:focus,button:active{
   }
   nav{
     width: 250px;
+  }
+}
+
+
+/* Login Css */
+.login-bg{
+  background: url('./img/bg.jpg') no-repeat center center;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.login-container{
+  max-width: 500px;
+  margin: 100px auto;
+  background: #DF8A4D;
+  overflow: hidden;
+  box-shadow: 0px 4px 5px rgba(145, 143, 143, 0.3), 0px -4px 5px rgba(145, 143, 143, 0.3);
+  border-radius: 10px;
+  padding: 0 40px;
+}
+.login-container h1{
+  color: #161412;
+  font-weight: bold;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 30px;
+}
+.login-container form{
+  margin: 60px auto 0 auto;
+  max-width: 400px;
+}
+.login-container input{
+  background: #F5EEE9;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  display: block;
+  width: 100%;
+  margin: 0 auto 30px auto;
+  padding: 17px 15px;
+}
+.login-container button{
+  width: 250px;
+  height: 45px;
+  background: #D42015;
+  border-radius: 10px;
+  color: #F5EEE9;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0px 4px 5px rgba(145, 143, 143, 0.3);
+}
+.login-container button:hover{
+  background: #b6251d;
+}
+.login-container hr{
+  background: #161412;
+  border: none;
+  height: 1px;
+  width: 400px;
+  margin-top: 40px;
+}
+.login-container p{
+  text-align: center;
+  margin: 30px auto;
+}
+.cadastro-login{
+  color: #D42015;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.cadastro-login:hover{
+  color: #b6251d;
+}
+
+@media only screen and (max-width:550px){
+  .login-container{
+    margin: 100px 15px;
+    padding: 0 30px;
+  }
+  .login-container h1{
+    font-size: 36px;
+  }
+  .login-container form {
+    margin-top: 30px;
   }
 }
